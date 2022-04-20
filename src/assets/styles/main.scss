@@ -1,5 +1,21 @@
 @import "~bootstrap/scss/bootstrap";
 @import "partials/welcomeScreen.scss";
+@import "partials/author.scss";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
 
+
+html,body{
+    font-family: 'Raleway';
+}
+
+hr{
+   margin: 0;
+   opacity: 1;
+}
+
+h2 {
+    text-align: left;
+    font-weight:400;
+}
 
 //all saas files which are in the partials folder will import by this main.scss. 

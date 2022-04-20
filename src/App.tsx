@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './assets/styles/main.scss';
 import Library from './components/content/Library';
 
@@ -8,7 +8,8 @@ import Library from './components/content/Library';
 
 function App() {
   return (
-    <Library/>
+    <Library />
+
   );
 }
 
