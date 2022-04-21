@@ -18,4 +18,27 @@ h2 {
     font-weight:400;
 }
 
+li{
+    font-size: 1.2rem;
+}
+
+.list{
+    max-height:250px;
+    overflow-y: scroll;
+    .list-li {
+        &:hover {
+            background: #f5f5f5;
+    
+            .list-icon {
+                display: inline-block;
+            }
+        }
+    
+        .list-icon { 
+                cursor: pointer; 
+    
+            display: none;
+        }
+    }
+}
 //all saas files which are in the partials folder will import by this main.scss. 
