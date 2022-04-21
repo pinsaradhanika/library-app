@@ -1,5 +1,5 @@
 import React from "react";
-import {Col,Row,Image,Container} from 'react-bootstrap';
+import {Col,Row,Image} from 'react-bootstrap';
 import splashimage from '../assets/images/splashimage.jpg'
 
 
