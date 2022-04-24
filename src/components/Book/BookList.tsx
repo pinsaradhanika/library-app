@@ -9,27 +9,15 @@ const BookList: React.FC = () => {
         {id:2 , name: 'Book 2'},
         {id:3 ,name: 'Book 3'}
     ];
-
-    // return(
-    //     <ol className='book-list'>
-    //         books.map((bookNames) => {
-    //
-    //             });
-    //     </ol>
-    // )
-
-    // const renderBooks = () =>{
-    //     ;
-    // }
 if(books.length != 0){
     return (
         <ol className='book-list'>
             <li> {
                 books.map((bookNames) => (
 
-                    <Row className='single-book me-5'>
+                    <Row className='single-book me-5 mt-2 my-1 p-1'>
                         <Col xs={9}>
-                            <label> {bookNames.id}.{bookNames.name}</label>
+                            <label> {bookNames.id}. {bookNames.name}</label>
                         </Col>
                         <Col xs={3} className='icon-container text-end'>
                             <FeatherIcon className='list-icon text-warning mx-2' icon={'edit'}></FeatherIcon>

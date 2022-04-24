@@ -1,4 +1,14 @@
 .books-section{
+  .add-book-container{
+
+    .add-icon{
+      width: 30px;
+      height: 30px;
+    }
+    &:hover{
+      cursor: pointer;
+    }
+    }
     .book-title{
         border-bottom: 1px solid black;
     }

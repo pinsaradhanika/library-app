@@ -11,7 +11,10 @@ const Books: React.FC = () => {
         <Title/>
         <BookList/>
         <Col>
-
+            <div className='add-book-container'>
+                <FeatherIcon className='add-icon text-primary me-1' icon={'plus'}> </FeatherIcon>
+                <label>Add Book</label>
+            </div>
         </Col>
     </Row>
   )
