@@ -1,5 +1,7 @@
 .create {
     padding-top: 30px;
+    
+    
     .formName {
         text-decoration: underline;
         color: #01796f;
@@ -22,8 +24,39 @@
     .formButtonContain {
         text-align: right;
     }
-    .formButton {
-        width: 150px;
-        height: 40px;
+    // .formButton {
+    //     width: 150px;
+    //     height: 40px;
+    // }
+    .list-icon{
+        cursor: pointer;
     }
+
+    .inputField{
+        border-radius: 0;
+        border: 1px solid black;
+    }
+
+    Button{
+        padding: 2px 10px;
+        border-radius: 5px;
+        background-color: #13479b;
+    }
+    h3{
+        color: #01796f;
+        font-size:1.2em;
+        padding-bottom: 1em;
+        //border-bottom: 2px solid #01796f;
+        text-decoration: underline;
+        //display: inline-block;
+        font-weight: 500;
+    
+    }
+
+   
+}
+
+
+.bookCreate{
+    padding-bottom: 10em;
 }
