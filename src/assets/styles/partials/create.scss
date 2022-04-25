@@ -1,0 +1,29 @@
+.create {
+    padding-top: 30px;
+    .formName {
+        text-decoration: underline;
+        color: #01796f;
+        font-size: 20px;
+    }
+    .closeIcon {
+        text-align: right;
+    }
+    .list-icon {
+        color: #5e5e5e;
+        font-size: 16px;
+    }
+    .createForm {
+        padding-top: 10px;
+        margin-left: 20px;
+    }
+    .formLabel {
+        font-size: 14px;
+    }
+    .formButtonContain {
+        text-align: right;
+    }
+    .formButton {
+        width: 150px;
+        height: 40px;
+    }
+}
