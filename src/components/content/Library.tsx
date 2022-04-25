@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Author from "../Author";
 import Books from "../Book/Book";
 import CreateAuthor from "../CreateAuthor";
+import CreateBook from "../CreateBook";
 import WelcomeScreen from "../WelcomeScreen";
 
 
@@ -18,6 +19,7 @@ const Library: React.FC = () => {
             <Row  >
                 <Col md={6} sm={11}>
                     <Books/>
+                    <CreateBook/>
                     {/* insert Books UI-UX here*/}
                     {/* <Author></Author> */}
 
