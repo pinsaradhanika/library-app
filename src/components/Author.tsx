@@ -11,7 +11,7 @@ const Author: React.FC = () => {
                     <hr />
                 </Col>
             </Row>
-            <Row >
+            <Row>
                 <Col>
 
                     <ol className="p-0 list">

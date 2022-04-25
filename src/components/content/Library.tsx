@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Author from "../Author";
 import Books from "../Book/Book";
+import CreateAuthor from "../CreateAuthor";
 import WelcomeScreen from "../WelcomeScreen";
 
 
@@ -23,7 +24,8 @@ const Library: React.FC = () => {
                 </Col>
                 <Col md={6} sm={11}>
                     <Author></Author>
-
+                    <CreateAuthor />
+                    <br />
                 </Col>
             </Row>
         </Container>
