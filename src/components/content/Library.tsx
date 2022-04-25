@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Author from "../Author";
+import Books from "../Book/Book";
 import WelcomeScreen from "../WelcomeScreen";
 
 
@@ -15,12 +16,14 @@ const Library: React.FC = () => {
             </Row>
             <Row  >
                 <Col md={6} sm={11}>
+                    <Books/>
                     {/* insert Books UI-UX here*/}
                     {/* <Author></Author> */}
 
                 </Col>
                 <Col md={6} sm={11}>
                     <Author></Author>
+
                 </Col>
             </Row>
         </Container>
