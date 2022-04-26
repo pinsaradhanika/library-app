@@ -1,6 +1,7 @@
 import React from 'react';
-import FeatherIcon from "feather-icons-react"; 
+import FeatherIcon from "feather-icons-react";
 import EmptyAuthor from "./EmptyAuthor";
+import { Col, Row } from 'react-bootstrap';
 
 
 const AuthorList: React.FC = () => {
@@ -18,26 +19,32 @@ const AuthorList: React.FC = () => {
 
     if (authorData.length != 0) {
         return (
-            <ol className=" list">
-                {authorData.map((item) => (
-                    <li className="list-li py-1 my-1 align-middle" key={item.key}>
-                        <span>{item.name}</span>
-                        <span className='list-end align-middle'>
-                            <FeatherIcon className='list-icon text-warning mx-2 align-middle' icon={'edit'}></FeatherIcon>
-                            <FeatherIcon className='list-icon text-danger  align-middle' icon={'trash-2'}></FeatherIcon>
-                        </span>
+            <Row>
+                <Col className='p-0'>
+                    <ol className=" list">
+                        {authorData.map((item) => (
+                            <li className="list-li py-1 my-1 align-middle" key={item.key}>
+                                <span className='align-middle'>{item.name}</span>
+                                <span className='list-end align-middle'>
+                                    <FeatherIcon className='list-icon text-warning mx-2 align-middle' icon={'edit'}></FeatherIcon>
+                                    <FeatherIcon className='list-icon text-danger  align-middle' icon={'trash-2'}></FeatherIcon>
+                                </span>
 
-                    </li>
+                            </li>
 
-                ))}
+                        ))}
 
-            </ol>
+                    </ol>
+                </Col>
+
+            </Row>
+
         );
     }
-else
-    return ( 
-        <EmptyAuthor/>
-    )
+    else
+        return (
+            <EmptyAuthor />
+        )
 
 };
 
