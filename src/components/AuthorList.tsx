@@ -1,10 +1,50 @@
-import React from 'react';
+import React, { Component } from 'react';
 import FeatherIcon from "feather-icons-react";
 import EmptyAuthor from "./EmptyAuthor";
 import { Col, Row } from 'react-bootstrap';
+import Swal from 'sweetalert2'
 
-
+ 
 const AuthorList: React.FC = () => {
+ 
+ 
+    
+
+      const confirmDelete = () => {  
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+              confirmButton: 'btn btn-success m-1',
+              cancelButton: 'btn btn-danger m-1'
+            },
+            buttonsStyling: false
+          })
+          
+          swalWithBootstrapButtons.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            reverseButtons: true
+          }).then((result) => {
+            if (result.isConfirmed) {
+              swalWithBootstrapButtons.fire(
+                'Deleted!',
+                'Author has been deleted.',
+                'success'
+              )
+            } else if ( 
+              result.dismiss === Swal.DismissReason.cancel
+            ) {
+              swalWithBootstrapButtons.fire(
+                'Cancelled',
+                'Author is safe :)',
+                'error'
+              )
+            }
+          })
+      } 
 
     const authorData: any[] = [
         { key: 1, name: 'Author1' },
@@ -26,8 +66,8 @@ const AuthorList: React.FC = () => {
                             <li className="list-li py-1 my-1 align-middle" key={item.key}>
                                 <span className='align-middle'>{item.name}</span>
                                 <span className='list-end align-middle'>
-                                    <FeatherIcon className='list-icon text-warning mx-2 align-middle' icon={'edit'}></FeatherIcon>
-                                    <FeatherIcon className='list-icon text-danger  align-middle' icon={'trash-2'}></FeatherIcon>
+                                    <FeatherIcon className='list-icon text-warning mx-2 align-middle' icon={'edit'} ></FeatherIcon>
+                                    <FeatherIcon className='list-icon text-danger  align-middle' icon={'trash-2'} onClick={confirmDelete}></FeatherIcon>
                                 </span>
 
                             </li>
@@ -47,5 +87,7 @@ const AuthorList: React.FC = () => {
         )
 
 };
+
+
 
 export default AuthorList;

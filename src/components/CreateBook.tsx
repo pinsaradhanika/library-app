@@ -1,8 +1,18 @@
 import React from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
+import Swal from 'sweetalert2'
 
  const CreateBook: React.FC = () => {
+
+  const confirmAdd = () => {   
+    Swal.fire({
+      icon: 'success',
+      title: 'Book added sucessfully!', 
+      timer: 1500
+    })
+  } 
+
   return (
    <Container className='create'>
     <Col xs={10}  className='bookCreate mt-5'>
@@ -33,7 +43,7 @@ import FeatherIcon from 'feather-icons-react';
         </select>
         </Form.Group>               
         <Col xs={12} className='text-end my-3'>
-            <Button type="submit">Create</Button>
+            <Button type="submit" onClick={confirmAdd}>Create</Button>
         </Col>
         </Form>
       </Col>
