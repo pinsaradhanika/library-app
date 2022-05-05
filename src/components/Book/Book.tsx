@@ -5,6 +5,7 @@ import Title from "./Title";
 
 import BookList from "./BookList";
 import CreateBook from "../CreateBook";
+import AddBook from "./AddBook";
 
 const Books: React.FC = () => {
 
@@ -13,13 +14,7 @@ const Books: React.FC = () => {
     <Row className='books-section'>
         <Title/>
         <BookList/>
-        <Col>
-            <div className='add-container'>
-                <FeatherIcon className='add-icon text-primary me-1' icon={'plus'}> </FeatherIcon>
-                <span>Add Book</span>
-            </div>
-            
-        </Col>
+        <AddBook/>
     </Row>
   )
 }
