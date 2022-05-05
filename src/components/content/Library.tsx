@@ -17,16 +17,16 @@ const Library: React.FC = () => {
                 </Col>
             </Row>
             <Row  >
-                <Col md={6} sm={11} className="pt-1 p-5  order-md-1 order-2 ">
+                <Col md={6} sm={12} className="pt-md-1 pt-5 px-md-5 ps-5  order-md-1 order-2 ">
                     <Books/>
                     <CreateBook/>
 
                 </Col>
-                <Col md={6} sm={11} className="pt-1 pe-md-4 p-5 order-md-1 order-1">
+                <Col md={6} sm={12} className="pt-md-1 pt-5 pe-md-4 px-md-5 ps-5 order-md-1 order-1 ">
                     <Author/>
                     <CreateAuthor />
                 </Col>
-            </Row>
+            </Row> 
         </Container>
     )
 }
