@@ -17,17 +17,14 @@ const Library: React.FC = () => {
                 </Col>
             </Row>
             <Row  >
-                <Col md={6} sm={11}>
+                <Col md={6} sm={11} className="pt-1 p-5  order-md-1 order-2 ">
                     <Books/>
                     <CreateBook/>
-                    {/* insert Books UI-UX here*/}
-                    {/* <Author></Author> */}
 
                 </Col>
-                <Col md={6} sm={11}>
-                    <Author></Author>
+                <Col md={6} sm={11} className="pt-1 pe-md-4 p-5 order-md-1 order-1">
+                    <Author/>
                     <CreateAuthor />
-                    <br />
                 </Col>
             </Row>
         </Container>

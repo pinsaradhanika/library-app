@@ -66,8 +66,8 @@ const AuthorList: React.FC = () => {
                             <li className="list-li py-1 my-1 align-middle" key={item.key}>
                                 <span className='align-middle'>{item.name}</span>
                                 <span className='list-end align-middle'>
-                                    <FeatherIcon className='list-icon text-warning mx-2 align-middle' icon={'edit'} ></FeatherIcon>
-                                    <FeatherIcon className='list-icon text-danger  align-middle' icon={'trash-2'} onClick={confirmDelete}></FeatherIcon>
+                                    <FeatherIcon className='list-icon text-warning me-2 align-middle' icon={'edit'} ></FeatherIcon>
+                                    <FeatherIcon className='list-icon text-danger me-3  align-middle' icon={'trash-2'} onClick={confirmDelete}></FeatherIcon>
                                 </span>
 
                             </li>

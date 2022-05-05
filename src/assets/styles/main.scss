@@ -7,11 +7,12 @@
 
 html,
 body {
+    color: #2b3134;
     font-family: 'Raleway';
 }
 
 .brd-bottom {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #2b3134;
 }
 
 h2 {
@@ -20,7 +21,7 @@ h2 {
 }
 
 li {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 
@@ -60,6 +61,7 @@ li {
         margin-left: -4px;
         width: 30px;
         height: 30px;
+        color: #1449a0;
     }
 }
 

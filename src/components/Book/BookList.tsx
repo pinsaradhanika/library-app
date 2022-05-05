@@ -50,24 +50,28 @@ const BookList: React.FC = () => {
     ];
 if(books.length != 0){
     return (
-        <ol className='book-list'>
-            <li> {
-                books.map((bookNames) => (
 
-                    <Row className='single-book me-5 mt-2 my-1 p-1'>
-                        <Col xs={9}>
-                            <label> {bookNames.id}. {bookNames.name}</label>
-                        </Col>
-                        <Col xs={3} className='icon-container text-end'>
-                            <FeatherIcon className='list-icon text-warning mx-2' icon={'edit'}></FeatherIcon>
-                            <FeatherIcon className='list-icon text-danger ' icon={'trash-2'} onClick={confirmDelete}></FeatherIcon>
-                        </Col>
-                    </Row>
+      <Row>
+      <Col className='p-0'>
+          <ol className=" list">
+              {
+               books.map((bookNames) => (
+                  <li className="list-li py-1 my-1 align-middle" key={bookNames.id}>
+                      <span className='align-middle'>{bookNames.name}</span>
+                      <span className='list-end align-middle'>
+                          <FeatherIcon className='list-icon text-warning me-2 align-middle' icon={'edit'} ></FeatherIcon>
+                          <FeatherIcon className='list-icon text-danger me-3  align-middle' icon={'trash-2'} onClick={confirmDelete}></FeatherIcon>
+                      </span>
 
-                ))
-            }
-            </li>
-        </ol>
+                  </li>
+
+              ))}
+
+          </ol>
+      </Col>
+
+  </Row>
+         
     );
 }
 else

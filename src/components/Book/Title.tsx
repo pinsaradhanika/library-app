@@ -1,11 +1,13 @@
-import React from 'react';
-import {Col, Row} from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 const Title = () => {
-  return(
-          <Col xs={12}>
-              <h2 className='mt-3 pb-2 book-title me-5'>Books</h2>
-          </Col>
+  return (
+    <Row>
+      <Col className="p-0 my-3 brd-bottom">
+        <h2 className="pl-0 ">Books</h2>
+      </Col>
+    </Row>
+
   )
 }
 
