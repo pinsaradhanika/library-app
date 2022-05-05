@@ -1,11 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Col, Row} from "react-bootstrap";
 import EmptyLabel from "./EmptyLabel";
 import FeatherIcon from "feather-icons-react";
 import Swal from 'sweetalert2'
+import { MainBook } from '../types';
+import Book from './Book';
 
-const BookList: React.FC = () => {
+type BookListProps = {
+  books: MainBook[] | null
+}
+type BookProps = {
+  id:number
+  bookName:string
+}
+function BookItem(props:BookProps){
+  const {id,bookName} = props;
+  return(
+    <>
+    <Row>
+      
+       
+    <Col xs={9} className='list'>
+      <label> {id}. {bookName} </label>
+    </Col>
 
+    <Col xs={3} className='list-end align-middle'>
+        <FeatherIcon className='list-icon text-warning me-2 align-middle' icon={'edit'}></FeatherIcon>
+        <FeatherIcon className='list-icon text-danger me-3  align-middle' icon={'trash-2'}></FeatherIcon>
+      </Col>
+      
+      
+      </Row>
+      </>
+  )
+}
+
+const BookList: React.FC<BookListProps>= (props) => {
+
+  const {books} = props;
 
     const confirmDelete = () => {  
         const swalWithBootstrapButtons = Swal.mixin({
@@ -43,42 +75,43 @@ const BookList: React.FC = () => {
           })
       } 
 
-    const books: any[] = [
-        {id:1 , name: 'Book 1'},
-        {id:2 , name: 'Book 2'},
-        {id:3 ,name: 'Book 3'}
-    ];
-if(books.length != 0){
-    return (
+    // const books: any[] = [
+    //     {id:1 , name: 'Book 1'},
+    //     {id:2 , name: 'Book 2'},
+    //     {id:3 ,name: 'Book 3'}
+    // ];
+  
+    //const [books] = useState(initBooks);
 
-      <Row>
-      <Col className='p-0'>
-          <ol className=" list">
-              {
-               books.map((bookNames) => (
-                  <li className="list-li py-1 my-1 align-middle" key={bookNames.id}>
-                      <span className='align-middle'>{bookNames.name}</span>
-                      <span className='list-end align-middle'>
-                          <FeatherIcon className='list-icon text-warning me-2 align-middle' icon={'edit'} ></FeatherIcon>
-                          <FeatherIcon className='list-icon text-danger me-3  align-middle' icon={'trash-2'} onClick={confirmDelete}></FeatherIcon>
-                      </span>
+    
+    const renderBooks = () => {
+      if(!books){
+        return;
+      }
+       return books.map((book: MainBook, index: number) =>
+       <li className="list-li py-1 my-1 align-middle" key={index}>
+         <BookItem id={index+1}
+                      bookName={book.name}/>
+             </li>
+       )
+    }
 
-                  </li>
-
-              ))}
-
-          </ol>
-      </Col>
-
-  </Row>
-         
-    );
-}
-else
-    return (
-        <EmptyLabel/>
+    return(
+      <Col>
+     {(!books || books.length ===0) && <EmptyLabel/>}
+        <ul className='list-unstyled'>
+          <div className='list'>
+     {renderBooks()}
+     </div>
+     </ul>
+     </Col>
     )
-
-};
+    };
+     
+   
 
 export default BookList;
+
+function initBooks(initBooks: any): [any] {
+  throw new Error('Function not implemented.');
+}
