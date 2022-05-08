@@ -1,0 +1,75 @@
+@mixin media($breakpoint) {
+    @if($breakpoint==mobile) {
+        @media (max-width: 640px) {
+            @content
+        }
+    }
+
+    @if($breakpoint==tablet) {
+        @media (max-width: 770px) {
+            @content
+        }
+    }
+}
+
+
+.create {
+    padding-top: 30px; 
+    
+     
+    .closeIcon {
+        text-align: right;
+    }
+    .list-icon {
+        color: #5e5e5e;
+        font-size: 16px;
+    }
+    .createForm {
+        padding-top: 10px;
+        margin-left: 20px;
+        @include media(mobile) {
+            margin-left: 0px;
+        }
+    }
+    .formLabel {
+        font-size: 14px;
+    }
+    .formButtonContain {
+        text-align: right;
+    }
+    // .formButton {
+    //     width: 150px;
+    //     height: 40px;
+    // }
+    .list-icon{
+        cursor: pointer;
+    }
+
+    .inputField{
+        border-radius: 0;
+        border: 1px solid black;
+    }
+
+    Button{
+        padding: 2px 10px;
+        border-radius: 5px;
+        background-color: #1449a0;
+
+        @include media(mobile) {
+            width:100%;
+        }
+    }
+    h3{
+        color: #115141;
+        font-size:1.4em; 
+        border-bottom: 2px solid #0e463f; 
+        display: inline-block;
+        font-weight: 500;
+        @include media(mobile) {
+            font-size: 1rem;
+        }
+    }
+
+   
+}
+ 

@@ -1,0 +1,52 @@
+@mixin media($breakpoint) {
+    @if($breakpoint==mobile) {
+        @media (max-width: 640px) {
+            @content
+        }
+    }
+
+    @if($breakpoint==tablet) {
+        @media (max-width: 770px) {
+            @content
+        }
+    }
+}
+
+
+.splash {
+
+    h1 {
+        text-align: center;
+        font-weight: bold;
+
+        @include media(mobile) {
+            font-size: 1.5rem;
+        }
+    }
+
+    .splash-img{
+
+        @include media(mobile) {
+            height: 300px;
+            width: 100%;
+        }
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+ 
+    }
+
+    .imagetag {
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+
+
+        @include media(mobile) {
+            font-size: 0.7rem;
+        }
+    }
+
+}

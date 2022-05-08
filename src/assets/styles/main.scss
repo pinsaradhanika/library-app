@@ -1,0 +1,93 @@
+@import "~bootstrap/scss/bootstrap";
+@import "partials/welcomeScreen.scss";
+@import "partials/author.scss";
+@import "partials/_book.scss";
+@import "partials/create.scss";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap');
+
+@mixin media($breakpoint) {
+    @if($breakpoint == mobile)  {
+      @media (max-width: 640px) { @content }
+    }
+    @if($breakpoint == tablet)  {
+      @media (max-width: 770px) { @content }
+    }
+  }
+ 
+ 
+
+html,
+body {
+    color: #2b3134;
+    font-family: 'Raleway';
+    margin-bottom: 30px;
+}
+
+.brd-bottom {
+    border-bottom: 2px solid #2b3134;
+}
+
+h2 {
+    text-align: left;
+    font-weight: 400;
+
+    @include media(mobile) {
+        font-size: 1.2rem;
+    }
+}
+
+li {
+    font-size: 1.4rem;
+        @include media(mobile){
+            font-size: 1rem;
+    }
+}
+
+
+.list {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0;
+
+    .list-li {
+        .list-end {
+            float: right;
+        }
+
+        &:hover {
+            background: #f5f5f5;
+
+            .list-icon {
+                display: inline-block;
+            }
+        }
+
+        .list-icon {
+            cursor: pointer;
+            display: none;
+        }
+    }
+}
+
+.add-container {
+    display: inline-block;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+
+    @include media(mobile) {
+        font-size: 0.9rem;
+    }
+    .add-icon {
+        margin-left: -4px;
+        width: 30px;
+        height: 30px;
+        color: #1449a0;
+    }
+}
+
+
+
+//all saas files which are in the partials folder will import by this main.scss.
