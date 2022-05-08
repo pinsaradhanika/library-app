@@ -58,7 +58,7 @@ const CreateBook: React.FC<FormProps> = (props) => {
  }
 
   return (
-    <Container className='create mt-4  p-md-auto p-sm-0'>
+    <Container className='create mt-4   '>
       <Row className=' p-md-auto p-sm-0'>
 
         <Col md={9} xs={11}>
