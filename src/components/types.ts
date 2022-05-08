@@ -4,3 +4,7 @@ export interface MainBook {
     bookAuthor: string
     //id:number
 }
+
+export interface MainAuthor {
+    name: string
+}
