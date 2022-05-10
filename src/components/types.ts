@@ -8,3 +8,8 @@ export interface MainBook {
 export interface MainAuthor {
     name: string
 }
+
+export interface AuthorsArray{
+    value:string
+    label:string
+}

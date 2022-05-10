@@ -10,7 +10,11 @@ import FeatherIcon from "feather-icons-react";
 type AddAuthorProps = {
     onAddAuthorClicked: () => void
   }
-const Author: React.FC = () => {
+
+type AuthorProps = {
+    AuthorSelect: (arr : MainAuthor[]) => void
+}
+const Author: React.FC<AuthorProps> = (props) => {
   const [authors, setAuthors] = useState<MainAuthor[] | null>(null);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
@@ -35,10 +39,12 @@ const Author: React.FC = () => {
     setIsFormVisible(false);
   }
 
-  const handleBookCreate = (addedBook: MainAuthor) => {
-    const allBooks: MainAuthor[] = authors ? authors.slice() : [];
-    allBooks.push(addedBook);
-    setAuthors(allBooks);
+  const handleAuthorCreate = (addedAuthor: MainAuthor) => {
+    const authorArray: MainAuthor[] = authors ? authors.slice() : [];
+    authorArray.push(addedAuthor);
+    setAuthors(authorArray);
+
+    props.AuthorSelect(authorArray);
   }
 
     return (
@@ -46,10 +52,14 @@ const Author: React.FC = () => {
             <AuthorTitle />
             <AuthorList authors={authors} />
             <AddAuthor onAddAuthorClicked={handleAddBtn} />
-            {isFormVisible && <CreateAuthor onCanselBtn={handleCanselBtn} onAuthorCreated={handleBookCreate} />}
+            {isFormVisible && <CreateAuthor onCanselBtn={handleCanselBtn} onAuthorCreated={handleAuthorCreate} />}
         </Row>
     )
 }
 
 
 export default Author;
+function allAuthors(allAuthors: any) {
+  throw new Error("Function not implemented.");
+}
+

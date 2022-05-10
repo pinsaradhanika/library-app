@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Author from "../Author";
+import AuthorListArray from "../AuthorListArray";
 import Books from "../Book/Book";
 import CreateAuthor from "../CreateAuthor";
 import CreateBook from "../CreateBook";
@@ -17,14 +18,18 @@ const Library: React.FC = () => {
                 </Col>
             </Row>
             <Row  >
-                <Col md={6} sm={12} className="pt-md-1 pt-5 px-md-5 ps-5  order-md-1 order-2 ">
-                    <Books/>
+                {/* <Col md={6} sm={12} className="pt-md-1 pt-5 px-md-5 ps-5  order-md-1 order-2 ">
+                    <Books SelectAuthorsName={[]}/>
                     {/* <CreateBook/> */}
 
-                </Col>
+                {/* </Col>
                 <Col md={6} sm={12} className="pt-md-1 pt-5 pe-md-4 px-md-5 ps-5 order-md-1 order-1 ">
-                    <Author />
-                </Col>
+                    <Author AuthorSelect={function (arr: MainAuthor[]): void {
+                        throw new Error("Function not implemented.");
+                    } } />
+                </Col> */} 
+                
+                <AuthorListArray/>
             </Row> 
         </Container>
     )

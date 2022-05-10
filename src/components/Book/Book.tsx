@@ -5,13 +5,18 @@ import Title from "./Title";
 
 import BookList from "./BookList";
 import CreateBook from "../CreateBook";
-import { MainBook } from "../types";
+import { AuthorsArray, MainBook } from "../types";
 
 type AddBookProps = {
   onAddBookClicked: () => void
 }
 
-const Books: React.FC = () => {
+type BookProps = {
+  AuthorsName: AuthorsArray[]
+  
+}
+
+const Books: React.FC<BookProps> = (props) => {
   // const initBooks: MainBook[] = [
   //       {name: 'Book 1'},
   //       {name: 'Book 2'},
@@ -56,7 +61,8 @@ const Books: React.FC = () => {
       <BookList books={books} />
 
       <AddBook onAddBookClicked={handleAddBtn} />
-      {isFormVisible && <CreateBook onCanselBtn={handleCanselBtn} onBookCreated={handleBookCreate} />}
+      {isFormVisible && <CreateBook onCanselBtn={handleCanselBtn} onBookCreated={handleBookCreate} SelectAuthorsName={props.AuthorsName} />}
+      
     </Row>
   )
 }
